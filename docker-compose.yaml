@@ -1,0 +1,39 @@
+
+services:
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: restaurantDB
+      MYSQL_USER: jolenar
+      MYSQL_PASSWORD: noor
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./restaurantDB.sql:/docker-entrypoint-initdb.d/restaurantDB.sql
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - database
+
+  restaurant-web:
+    build: .
+    container_name: restaurant-web
+    restart: always
+    ports:
+      - "8081:80"
+    depends_on:
+      - database
+
+volumes:
+  db_data: 
+
