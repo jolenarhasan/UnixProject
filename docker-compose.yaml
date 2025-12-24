@@ -9,10 +9,11 @@ services:
       MYSQL_USER: jolenar
       MYSQL_PASSWORD: noor
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
-      - ./restaurantDB.sql:/docker-entrypoint-initdb.d/restaurantDB.sql
+      - ./database/restaurantDB.sql:/docker-entrypoint-initdb.d/restaurantDB.sql
       - db_data:/var/lib/mysql
+
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
