@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ ! -d ".git" ]; 
-    then
-        echo "Git repository not initialized. Cloning..."
-        git clone git@github.com:jolenarhasan/UnixProject.git .
-    else
-        echo "Pulling latest changes..."
-        git fetch origin
-        git reset --hard origin/main
-fi
+SCRIPT_DIR="$(dirname "$0")"
+PROJECT_DIR="$SCRIPT_DIR/../../UnixProject"
+
+echo "Removing existing project..."
+rm -rf "$PROJECT_DIR"
+
+echo "Cloning fresh repository..."
+git clone https://github.com/jolenarhasan/UnixProject.git "$PROJECT_DIR"
+cd "$PROJECT_DIR"
