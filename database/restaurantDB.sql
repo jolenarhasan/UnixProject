@@ -22,3 +22,5 @@ INSERT INTO restaurants (name, specialty, rating) VALUES
 ('Burger Town', 'Burgers, Fries', 4.3),
 ('Sushi Express', 'Sushi, Japanese', 4.6),
 ('Vegan Delight', 'Salads, Vegan', 4.5);
+
+COMMIT;
