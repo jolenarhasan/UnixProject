@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "hello"
 if [ -z "$1" ]; 
     then
         COMMIT_MESSAGE="Auto commit by script $(date '+%Y-%m-%d %H:%M:%S')"
