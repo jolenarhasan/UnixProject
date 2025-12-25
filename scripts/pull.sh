@@ -11,7 +11,7 @@ if [ -d "$PROJECT_DIR/.git" ]; then
     cd "$PROJECT_DIR" || { echo "Failed to enter project directory"; exit 1; }
     git reset --hard
     git clean -fd
-    git pull
+    git pull origin main
 else
     echo "Project does not exist. Cloning repository..."
     git clone https://github.com/jolenarhasan/UnixProject.git

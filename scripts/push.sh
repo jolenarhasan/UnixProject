@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "hello"
-echo "hello"
 
 if [ -z "$1" ]; 
     then
@@ -12,12 +10,12 @@ fi
 if [ ! -d ".git" ]; 
     then
         echo "Initializing git repository..."
-       
-fi
- git init
- git branch -m main
-  git remote add origin git@github.com:jolenarhasan/UnixProject.git
-git add .
-git commit -m "$COMMIT_MESSAGE"
+        git init
+        git branch -m main
+        git remote add origin https://github.com/jolenarhasan/UnixProject.git
 
-git push origin main -u
+fi
+
+git add .
+git commit -m "$COMMIT_MESSAGE" || echo "No changes to commit"
+git push origin main
