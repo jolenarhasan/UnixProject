@@ -1,12 +1,16 @@
 #!/bin/bash
 
-# المسار المطلق للسكريبت نفسه
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/../../UnixProject"
 
-echo "Removing existing project..."
+PRO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+PROJECT_DIR="$PRO_DIR/UnixProject"
+
 rm -rf "$PROJECT_DIR"
 
-echo "Cloning fresh repository..."
+echo "Cloning fresh repository ..."
 git clone https://github.com/jolenarhasan/UnixProject.git "$PROJECT_DIR"
-cd "$PROJECT_DIR" || exit
+
+cd "$PROJECT_DIR" || { echo "Failed to enter project directory"; exit 1; }
+
+echo "Project is ready at $PROJECT_DIR"
