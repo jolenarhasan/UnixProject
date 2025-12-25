@@ -18,7 +18,7 @@ if(isset($_POST['meal'])) {
     <h1 class="text-center mb-4">Restaurant Recommendation System</h1>
     <form method="post" class="d-flex justify-content-center mb-3">
         <input type="text" name="meal" class="form-control w-50 me-2" placeholder="Enter your favorite meal" required>
-        <button type="submit" class="btn btn-primary">Get Recommendation</button>
+        <button type="submit" class="btn btn-primary">Get Recommendation.</button>
     </form>
 
     <?php if(isset($_POST['meal'])): ?>
