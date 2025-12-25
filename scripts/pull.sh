@@ -18,4 +18,5 @@ else
     cd "$PROJECT_DIR" || { echo "Failed to enter project directory"; exit 1; }
 fi
 
+
 echo "Project is up to date at $PROJECT_DIR"
