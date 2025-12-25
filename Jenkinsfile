@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REPO_URL = 'https://github.com/jolenarhasan/UnixProject.git'
-        DOCKER_BUILDKIT = '1'
+        //DOCKER_BUILDKIT = '1'
     }
 
     stages {
